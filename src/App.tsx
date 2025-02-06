@@ -34,7 +34,7 @@ const columns : ColumnsType<Game> = [
     key: 'developer',
     title: 'Developer',
     dataIndex: 'developer',
-    render: (developer: MaybeLink) => <>{renderMaybeLink(developer)} <img className='shield' alt="Twitch Status" src={`https://img.shields.io/twitch/status/${developer.label}?style=flat`} /></>,
+    render: (developer: MaybeLink) => <>{renderMaybeLink(developer)} <img className='shield' alt="Twitch Status" src={`https://img.shields.io/twitch/status/${developer.label}?style=flat&label=`} /></>,
     sorter: (a, b) => a.developer.label.localeCompare(b.developer.label)
   },
   {
