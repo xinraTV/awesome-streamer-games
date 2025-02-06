@@ -30,6 +30,9 @@ const data = rows.map(row => ({
   genres: row[4].split(',').map(genre => genre.trim()),
 }))
 
+if (!fs.existsSync('src/generated')) {
+  fs.mkdirSync('src/generated', { recursive: true });
+}
 fs.writeFileSync('src/generated/data.json', JSON.stringify(data, null, 2))
 
 console.log(`Parsed ${data.length} games`)
