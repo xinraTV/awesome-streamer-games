@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "npm run gen && vite",
+    "build": "npm run gen && tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "npm run gen && vite preview",
+    "gen": "node generate-data.js"
   },
   "dependencies": {
     "@ant-design/icons": "^5.6.0",

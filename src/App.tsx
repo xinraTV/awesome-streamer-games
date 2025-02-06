@@ -1,48 +1,32 @@
 import { ColumnsType } from 'antd/es/table';
 import './App.css'
-
+import dataJson from './generated/data.json'
 import { ConfigProvider, Table, Tag, theme, Typography } from 'antd';
 import { GithubOutlined } from '@ant-design/icons';
 
-type Link = { label: string, url: string }
+type MaybeLink = { label: string, url?: string }
 
 const STATUSES = ["Released", "Demo Available", "In Development"] as const
 
 type Status =  typeof STATUSES[number]
 
 type Game = {
-  name: Link,
-  developer: Link,
+  name: MaybeLink,
+  developer: MaybeLink,
   streamLanguage: string,
   status: Status
   genres: string[]
 }
 
 const { Title } = Typography;
-
-const data: Game[] = [
-  {
-    name: { label: 'A World of Little Legends', url: 'https://store.steampowered.com/app/1476680/A_World_of_Little_Legends/' },
-    developer: { label: 'Artimus83', url: 'https://www.twitch.tv/artimus83' },
-    streamLanguage: '🇩🇪 German',
-    status: 'In Development',
-    genres: ['RPG', 'Simulation']
-  },
-  {
-    name: { label: 'ShapeYard', url: 'https://heidew1zzka.itch.io/shapeyard' },
-    developer: { label: 'heidew1zzka', url: 'https://www.twitch.tv/heidew1zzka' },
-    streamLanguage: '🇬🇧 English',
-    status: 'Released',
-    genres: ['Puzzle', 'Platformer', "Simulation"]
-  }
-];
+const data = dataJson as Game[]
 
 const columns : ColumnsType<Game> = [
   {
     key: 'name',
     title: 'Name',
     dataIndex: 'name',
-    render: renderLink,
+    render: renderMaybeLink,
     sorter: (a, b) => a.name.label.localeCompare(b.name.label),
     defaultSortOrder: 'ascend'
   },
@@ -50,7 +34,7 @@ const columns : ColumnsType<Game> = [
     key: 'developer',
     title: 'Developer',
     dataIndex: 'developer',
-    render: (developer: Link) => <>{renderLink(developer)} <img className='shield' alt="Twitch Status" src={`https://img.shields.io/twitch/status/${developer.label}?style=flat`} /></>,
+    render: (developer: MaybeLink) => <>{renderMaybeLink(developer)} <img className='shield' alt="Twitch Status" src={`https://img.shields.io/twitch/status/${developer.label}?style=flat`} /></>,
     sorter: (a, b) => a.developer.label.localeCompare(b.developer.label)
   },
   {
@@ -91,10 +75,9 @@ function renderStatus(status: Status) {
   }
 }
 
-function renderLink(link: Link) {
-  return (
-    <a href={link.url} target='_blank'>{link.label}</a>
-  )
+function renderMaybeLink(link: MaybeLink) {
+  // explicitly no noreferrer
+  return link.url ? <a href={link.url} target='_blank'>{link.label}</a> : link.label
 }
 
 function App() {
@@ -108,6 +91,7 @@ function App() {
           columns={columns}
           pagination={false}
           bordered
+          title={() => 'A curated list of awesome games made by indie developers live on Twitch.'}
           footer={() => <>Collaborate on <GithubOutlined /> <a target='_blank' href='https://github.com/xinraTV/awesome-streamer-games'>GitHub</a>.</>}
         />
       </div>
