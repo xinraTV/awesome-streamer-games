@@ -1,4 +1,6 @@
 # Awesome Streamer Games
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+[![Build](https://github.com/xinraTV/awesome-streamer-games/actions/workflows/ci.yaml/badge.svg)](https://github.com/xinraTV/awesome-streamer-games/actions/workflows/ci.yaml)
 
 A curated list of awesome games made by indie developers live on Twitch.
 
