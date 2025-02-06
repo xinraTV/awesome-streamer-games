@@ -2,6 +2,8 @@
 
 A curated list of awesome games made by indie developers live on Twitch.
 
+Table with filters and sorting: https://xinratv.github.io/awesome-streamer-games
+
 <!-- TABLE BEGIN -->
 | Name | Developer | Stream Language | Status | Genres |
 | ---- | --------- | --------------- | ------ | ------ |
