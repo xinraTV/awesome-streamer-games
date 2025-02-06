@@ -34,7 +34,7 @@ const columns : ColumnsType<Game> = [
     key: 'developer',
     title: 'Developer',
     dataIndex: 'developer',
-    render: (developer: MaybeLink) => <>{renderMaybeLink(developer)} <img className='shield' alt="Twitch Status" src={`https://img.shields.io/twitch/status/${developer.label}?style=flat&label=`} /></>,
+    render: renderTwitchLink,
     sorter: (a, b) => a.developer.label.localeCompare(b.developer.label)
   },
   {
@@ -80,6 +80,10 @@ function renderMaybeLink(link: MaybeLink) {
   return link.url ? <a href={link.url} target='_blank'>{link.label}</a> : link.label
 }
 
+function renderTwitchLink(link: MaybeLink) {
+  return <>{renderMaybeLink(link)} <img className='shield' alt="Twitch Status" src={`https://img.shields.io/twitch/status/${link.label}?style=flat&label=`} /></>
+}
+
 function App() {
 
   return (
@@ -92,7 +96,7 @@ function App() {
           pagination={false}
           bordered
           title={() => 'A curated list of awesome games made by indie developers live on Twitch.'}
-          footer={() => <>Collaborate on <GithubOutlined /> <a target='_blank' href='https://github.com/xinraTV/awesome-streamer-games'>GitHub</a>.</>}
+          footer={() => <>Collaborate on <GithubOutlined /> <a target='_blank' href='https://github.com/xinraTV/awesome-streamer-games'>GitHub</a>. Made by {renderTwitchLink({ label: 'xinraTV', url: 'https://www.twitch.tv/xinratv' })}.</>}
         />
       </div>
     </ConfigProvider>
