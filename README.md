@@ -11,7 +11,8 @@ Table with filters and sorting: https://xinratv.github.io/awesome-streamer-games
 | ---- | --------- | --------------- | ------ | ------ |
 | [A World of Little Legends](https://store.steampowered.com/app/1476680/A_World_of_Little_Legends/) | [Artimus83](https://www.twitch.tv/artimus83) | 🇩🇪 German | Demo Available | Action, Adventure, RPG |
 | [Drova - Forsaken Kin](https://store.steampowered.com/app/1585180/Drova__Forsaken_Kin/) | [EntwicklerWG](https://www.twitch.tv/entwicklerwg) | 🇩🇪 German | Released  | Action, Adventure, RPG |
-| [Insignia](https://uppon-hill.itch.io/insignia) | [AdamCYounis](https://www.twitch.tv/adamcyounis) | 🇬🇧 English | Demo Available | Action, Adventure
+| [Insignia](https://uppon-hill.itch.io/insignia) | [AdamCYounis](https://www.twitch.tv/adamcyounis) | 🇬🇧 English | Demo Available | Action, Adventure |
+| [Long Gone](https://store.steampowered.com/app/1977610/Long_Gone/) | [HillfortGames](https://www.twitch.tv/hillfortgames) | 🇬🇧 English | In Development | Action, Point & Click |
 | [ShapeYard](https://heidew1zzka.itch.io/shapeyard) | [heidew1zzka](https://www.twitch.tv/heidew1zzka) | 🇩🇪 German | In Development | Puzzle, Strategy |
 | [Skeleseller](https://store.steampowered.com/app/3226210/Skeleseller/) | [AdamLearnsLive](https://www.twitch.tv/adamlearnslive) | 🇬🇧 English | Demo Available | Idle, Strategy |
 | [Spitfire - Moonpie´s Mission](https://store.steampowered.com/app/3339350/Spitfire__Moonpies_Mission/) | [rennsemmel81](https://www.twitch.tv/rennsemmel81) | 🇩🇪 German | Demo Available | Action, Rail Shooter, Sidescroller |
